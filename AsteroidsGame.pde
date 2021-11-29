@@ -19,35 +19,26 @@ public void draw()
     nightSky[i].show();
   }
   if (keyPressed) {
-    if (key == 'j' || key == 'J') {
+    if (key == 'd') {
       ship.turn(-10);
     }
-    if (key == ' ') {
-      ship.accelerate(0.3);
-    }
-    if (key == 'd') {
-      ship.setXspeed(3);
-      ship.setYspeed(0);
+    if (key == 'w') {
+      ship.accelerate(0.5);
     }
     if (key == 's') {
-      ship.setYspeed(3);
-      ship.setXspeed(0);
+      ship.accelerate(-0.5);
     }
     if (key == 'a') {
-      ship.setXspeed(-3);
-      ship.setYspeed(0);
+      ship.turn(10);
     }
-    if (key == 'w'){
-      ship.setYspeed(-3);
-      ship.setXspeed(0);
+    if (key == 'h') {
+        ship.setCenterX((int)(Math.random()*400));
+        ship.setCenterY((int)(Math.random()*400));
+        ship.setXspeed(0);
+        ship.setYspeed(0);
+        ship.setPointDirection((int)(Math.random()*361));
+      }
     }
-    if (key == 'h'){
-      double i = (double)(Math.random()*400);
-      ship.setCenterX(i);
-      ship.setXspeed(0);
-      ship.setYspeed(0);
-    }
-  }
   ship.move();
   ship.show();
 }
