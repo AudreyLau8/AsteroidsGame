@@ -19,7 +19,7 @@ public void draw()
     nightSky[i].show();
   }
   if (keyPressed) {
-    if (key == 'd') {
+    if (key == 'a') {
       ship.turn(-10);
     }
     if (key == 'w') {
@@ -28,7 +28,7 @@ public void draw()
     if (key == 's') {
       ship.accelerate(-0.5);
     }
-    if (key == 'a') {
+    if (key == 'd') {
       ship.turn(10);
     }
     if (key == 'h') {
