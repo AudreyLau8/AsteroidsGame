@@ -1,5 +1,6 @@
 Star[] nightSky = new Star[200];
 Spaceship ship = new Spaceship();
+ArrayList <Asteroid> rocks = new ArrayList <Asteroid>();
 
 public void setup() 
 {
@@ -7,6 +8,9 @@ public void setup()
   for (int i=0; i<nightSky.length; i++)
   {
     nightSky[i] = new Star();
+  }
+  for(int i=0; i<10; i++){
+    rocks.add(i, new Asteroid((int)(Math.random()*5)));
   }
 }
 
@@ -17,6 +21,10 @@ public void draw()
   for (int i=0; i<nightSky.length; i++)
   {
     nightSky[i].show();
+  }
+  for(int i=0; i<asteroids.size(); i++){
+    asteroids.get(i).show();
+    asteroids.get(i).move();
   }
   if (keyPressed) {
     if (key == 'a') {
