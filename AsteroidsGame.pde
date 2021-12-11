@@ -1,5 +1,6 @@
 Star[] nightSky = new Star[200];
 Spaceship ship = new Spaceship();
+ArrayList <Bullet> pew = new ArrayList <Bullet>();
 ArrayList <Asteroid> rocks = new ArrayList <Asteroid>();
 
 public void setup() 
@@ -10,7 +11,7 @@ public void setup()
     nightSky[i] = new Star();
   }
   for(int i=0; i<10; i++){
-    rocks.add(i, new Asteroid((int)(Math.random()*5)));
+    rocks.add(new Asteroid());
   }
 }
 
@@ -18,14 +19,20 @@ public void setup()
 public void draw() 
 {
   background(0);
+  
   for (int i=0; i<nightSky.length; i++)
   {
     nightSky[i].show();
   }
+  
   for(int i=0; i<asteroids.size(); i++){
     asteroids.get(i).show();
     asteroids.get(i).move();
+    float d = dist((float)(ship.getX()), (float)(ship.getY()), (float)(rocks.get(i).getX()), (float)(rocks.get(i).getY()));
+    if(d<15)
+      rocks.remove(i);
   }
+  
   if (keyPressed) {
     if (key == 'a') {
       ship.turn(-10);
