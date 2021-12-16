@@ -25,9 +25,9 @@ public void draw()
     nightSky[i].show();
   }
   
-  for(int i=0; i<asteroids.size(); i++){
-    asteroids.get(i).show();
-    asteroids.get(i).move();
+  for(int i=0; i<rocks.size(); i++){
+    rocks.get(i).show();
+    rocks.get(i).move();
     float d = dist((float)(ship.getX()), (float)(ship.getY()), (float)(rocks.get(i).getX()), (float)(rocks.get(i).getY()));
     if(d<15)
       rocks.remove(i);
